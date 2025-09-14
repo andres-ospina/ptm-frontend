@@ -196,8 +196,12 @@ const Producto = () => {
 
     const validateNumber = () => {
         var numericValueNumber = Number(numericValue);
+        var numericValueString = ''+numericValue;
 
-        if (numericValueNumber < 0) {
+        if(numericValueString.trim() == ''){
+            show_alerta('Escribe el valor numerico', 'warning');
+
+        }else if (numericValueNumber < 0) {
             show_alerta('La cantidad ingresada debe ser mayor a 0', 'warning');
         } else {
             search(numericValue);
